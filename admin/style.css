@@ -1,0 +1,92 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.wrap{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+}
+.sidebar{
+    width: 400px;
+    height: 100vh;
+    background-color: #000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+    color: #fff;
+}
+.adminPhoto{
+    width: 200px;
+    height: 200px;
+    background-color: #eee;
+    border-radius: 50%;
+    margin-bottom: 30px;
+}
+.adminName{
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+.adminBio{
+    font-size: 12px;
+    color: #999;
+}
+.sidebarGroup{
+    margin-top: 50px;
+    width: 100%;
+}
+.sidebarGroup__item{
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid #fff;
+    background-color: transparent;
+    color: #fff;
+    padding: 10px 0;
+    font-size: 24px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.sidebarGroup__item:hover{
+    transition: 0.8s;
+    background-color: #fff;
+    color: #000;
+}
+.adminPanel{
+    width: 75%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding: 30px;
+}
+.postForm{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.postForm input{
+    width: 400px;
+    height: 50px;
+    border: none;
+    box-shadow: 0 0 5px #999;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0;
+}
+.postForm button{
+    padding: 10px 20px;
+    background-color: blue;
+    color: #fff;
+    border: none;
+
+}
+.postContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.postContainer h2{
+    margin-bottom: 50px;
+    font-size: 32px;
+}

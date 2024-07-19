@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.js' integrity='sha512-+k1pnlgt4F1H8L7t3z95o3/KO+o78INEcXTbnoJQ/F2VqDVhWoaiVml/OEHv9HsVgxUaVW+IbiZPUJQfF/YxZw==' crossorigin='anonymous'></script>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.css' integrity='sha512-8BU3emz11z9iF75b10oPjjpamM4Mz23yQFQymbtwyPN3mNWHxpgeqyrYnkIUP6A8KyAj5k2p3MiYLtYqew7gIw==' crossorigin='anonymous'/>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.2/axios.js' integrity='sha512-vHNHepeQWwAggJlhEk932jRS5sNdn/Nn4F+w4TpXW5dA+04qnd3e7YpfXo6auWhFG6z3FVhmScG4ovtF+qYeZw==' crossorigin='anonymous'></script>
+</head>
+<body>
+    <div class="wrap">
+        <div class="sidebar">
+            <div class="adminPhoto"></div>
+            <h3 class="adminName">Taras klym</h3>
+            <p class="adminBio">спортивний блог</p>
+            <div class="adminSocial"></div>
+
+            <div class="sidebarGroup">
+               <button id="createPost" class="sidebarGroup__item"> створити пост</button>
+               <button id="#" class="sidebarGroup__item"> створити пост</button>
+            </div>
+        </div>
+        <div class="adminPanel">
+            <div class="postContainer">
+                <h2>Створення нового поста</h2>
+                <div class="postForm">
+                    <input type="text" id="title" placeholder="title">
+                    <textarea  id="post" placeholder="Message"></textarea>
+                    <button id="addPost">Додати</button>
+                </div>
+               
+
+            </div>
+        </div>
+    </div>
+    <script src="./main.js"></script>
+</body>
+</html>
