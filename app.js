@@ -22,6 +22,15 @@ app.get('/',(req,res)=>{
     res.sendFile(path.join(__dirname, 'public','index.html'))
 });
 
+app.get('/api/all-posts',async(req,res)=>{
+    try{
+        const allPosts= await Post.find();
+        res.json(allPosts)
+    }catch{
+        res.status(500).json({message:'Posts not find'})
+    }
+})
+
 app.post('/api/posts',async(req,res)=>{
     try{
         const {title,body}=req.body;
