@@ -2,4 +2,76 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: Oswald;
+  color: #fff;
+}
+
+.wrap {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #222;
+  display: flex;
+  flex-direction: column;
+}
+.wrap header {
+  width: 100%;
+  height: 10vh;
+  background-color: #111;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  border-radius: 0 0 20px 20px;
+  box-shadow: 0 3px 5px #999;
+}
+.wrap header .logo {
+  width: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.wrap header .logo img {
+  border-radius: 50%;
+  width: 9vh;
+}
+.wrap main {
+  width: 100%;
+  height: 90vh;
+  display: flex;
+}
+.wrap main .rightMain {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.wrap main .rightMain img {
+  width: 65%;
+  height: 55%;
+}
+.wrap main .leftMain {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding-left: 200px;
+}
+.wrap main .leftMain h3 {
+  font-size: 56px;
+}
+.wrap main .leftMain p {
+  margin-bottom: 50px;
+}
+.wrap main .leftMain button {
+  background-color: #000;
+  width: 100px;
+  height: 30px;
+  border: none;
+  border-radius: 15px;
+  font-size: 18px;
+}
+.wrap main .leftMain button:hover {
+  box-shadow: 0 0 15px #999;
+  transition: 0.5s;
 }/*# sourceMappingURL=style.css.map */

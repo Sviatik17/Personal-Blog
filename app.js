@@ -8,7 +8,7 @@ const Post=require('./model/Post')
 const PORT=3000;
 
 app.use(bodyParser.json());
-app.use(express.static(path.join(__dirname,'admin')))
+app.use(express.static(path.join(__dirname,'public')))
 
 mongoose.connect(`mongodb+srv://root:JS3ibNgyhbwzhCuI@cluster0.cx5ubjc.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`)
 .then(()=>{
@@ -16,7 +16,7 @@ mongoose.connect(`mongodb+srv://root:JS3ibNgyhbwzhCuI@cluster0.cx5ubjc.mongodb.n
 })
 
 app.get('/admin',(req,res)=>{
-    res.sendFile(path.join(__dirname, 'admin','index.html'))
+    res.sendFile(path.join(__dirname,'public', 'admin','index.html'))
 });
 app.get('/',(req,res)=>{
     res.sendFile(path.join(__dirname, 'public','index.html'))
