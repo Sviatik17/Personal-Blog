@@ -25,11 +25,12 @@
         <div class="adminPanel">
             <div class="postContainer">
                 <h2>Створення нового поста</h2>
-                <div class="postForm">
-                    <input type="text" id="title" placeholder="title">
-                    <textarea  id="post" placeholder="Message"></textarea>
-                    <button id="addPost">Додати</button>
-                </div>
+                <form class="postForm" action="/api/posts" method="POST"enctype="multipart/form-data">
+                    <input type="text" id="title" placeholder="title" name="title">
+                    <textarea  id="post" placeholder="Message" name="body"></textarea>
+                    <input type="file" name="photo" accept="image/*" required>
+                    <button id="addPost" type="submit">Додати</button>
+                </form>
                
 
             </div>
