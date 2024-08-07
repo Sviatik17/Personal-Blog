@@ -1,5 +1,5 @@
 function getAllPosts(){
-    axios.get('https://personal-blog-gc8h.onrender.com//api/all-posts')
+    axios.get('https://personal-blog-gc8h.onrender.com/api/all-posts')
     .then(res=>{
         console.log(res.data);
         for(let el of res.data){
