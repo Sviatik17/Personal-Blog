@@ -6,22 +6,13 @@ function getAllPosts(){
             $('.posts').append(`
                 <div class="post">
                 <div class="title">${el.title}</div>
+                 <img src="data:${el.photo.contentType};base64,${toBase64(el.photo.data.data)}" alt="photo">
                 <div class="body">${el.body}</div>
-                <img src="data:${el.photo.contentType};base64,${toBase64(el.photo.data.data)}" alt="photo">
+               
                 </div>
                 `)
-
-                    
-                    // $('.post').append( $('<img>', {
-                    //     src: `data:${el.photo.contentType};base64,${toBase64(el.photo.data.data)}`
-                    // }));
                 
-               
         }      
-
-        // function toBase64(arr) {
-        //     return btoa(String.fromCharCode.apply(null, new Uint8Array(arr)));
-        // }
 
         function toBase64(buffer) {
             const binary = [];
