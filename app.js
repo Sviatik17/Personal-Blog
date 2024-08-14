@@ -12,7 +12,7 @@ const upload=multer({storage:storage});
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static(path.join(__dirname,'public')))
+app.use(express.static(path.join(__dirname,'public','register')))
 
 mongoose.connect(`mongodb+srv://root:JS3ibNgyhbwzhCuI@cluster0.cx5ubjc.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`)
 .then(()=>{
@@ -23,7 +23,7 @@ app.get('/admin',(req,res)=>{
     res.sendFile(path.join(__dirname,'public', 'admin','index.html'))
 });
 app.get('/',(req,res)=>{
-    res.sendFile(path.join(__dirname, 'public','index.html'))
+    res.sendFile(path.join(__dirname, 'public','register','index.html'))
 });
 
 app.get('/api/all-posts',async(req,res)=>{
