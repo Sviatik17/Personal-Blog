@@ -4,6 +4,8 @@ const mongoose=require('mongoose');
 const path= require('path')
 const multer=require('multer');
 const bcrypt = require('bcryptjs');
+const cookieParser=require('cookie-parser');
+const jwt =require('jsonwebtoken')
 
 const app=express();
 const Post=require('./model/Post')
@@ -11,6 +13,7 @@ const User=require('./model/User')
 const PORT=3000;
 const storage=multer.memoryStorage();
 const upload=multer({storage:storage});
+const JWT_SECRET = 'your_jwt_secret';
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -74,6 +77,33 @@ app.post('/auth/register',async(req,res)=>{
         res.status(400).json({ message: 'User already exists' });
         console.log(error);
     }
+})
+
+app.post('/auth/login',async(req,res)=>{
+    const {username,password}=req.body;
+    if(!username || !password){
+        console.log('username and password are required')
+        return res.status(400).json({message:'username and password are required'})
+       
+    }
+
+    const user =await User.findOne({username});
+    if(!user){
+        console.log('Invalid username')
+        return res.status(400).json({message:'Invalid username'})
+    }
+
+    const isPasswordValid=await bcrypt.compare(password,user.password);
+    if(!isPasswordValid){
+        console.log('Invalid password')
+        return res.status(400).json({message:'Invalid password'})
+
+    }
+
+    const token=jwt.sign({userId: user._id},JWT_SECRET,{expiresIn:'1h'});
+    res.cookie('token',token,{httpOnly:true,secure:true});
+    res.status(200).json({message:'Logged in successfully'})
+    console.log('Logged in successfully')
 })
 
 app.listen(PORT,()=>{
